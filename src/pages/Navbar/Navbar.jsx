@@ -38,7 +38,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {/* <div className="navbar-end gap-2  mt-6 mb-4"> */}
+            
                 <div className="navbar-end gap-2  mt-6 mb-4">
                     {/* <div className="avatar">
                         <div className="w-10  rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
