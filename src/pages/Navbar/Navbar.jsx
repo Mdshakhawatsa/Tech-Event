@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -26,26 +26,23 @@ const Navbar = () => {
                 </div>
 
 
-                    <div className="navbar-center  hidden lg:flex">
-                        <div className="menu menu-horizontal text-white gap-5 pr-1">
+                <div className="navbar-center  hidden lg:flex">
+                    <div className="menu menu-horizontal text-white gap-5 pr-1">
 
-                            <Link className="hover:underline text-base">Home</Link>
-                            <Link className="hover:underline text-base">services</Link>
-                            <Link className="hover:underline text-base">Speakers</Link>
-                            <Link className="hover:underline text-base">About US</Link>
+                        <Link className="hover:underline text-base">Home</Link>
+                        <Link className="hover:underline text-base">services</Link>
+                        <Link className="hover:underline text-base">Speakers</Link>
+                        <Link className="hover:underline text-base">About US</Link>
 
-                        
+
                     </div>
                 </div>
 
-            
+
                 <div className="navbar-end gap-2  mt-6 mb-4">
-                    {/* <div className="avatar">
-                        <div className="w-10  rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                        </div>
-                    </div> */}
-                    <button className="btn   sm:btn-sm md:btn-md lg:btn-md">LogIn</button>
+                    <button className="btn font-bold font-poppins  sm:btn-sm md:btn-md lg:btn-md">
+                        <NavLink to="/login">LogIn</NavLink> </button>
+
                 </div>
             </div>
         </div>
@@ -53,3 +50,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+{/* <div className="avatar">
+                        <div className="w-10  rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        </div>
+                    </div> */}

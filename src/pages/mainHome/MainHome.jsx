@@ -1,15 +1,31 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
+
+
+
+
 
 const MainHome = () => {
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, []);
+
+
     return (
-        <div>
-
-
-
+        <div >
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero min-h-screen " style={{ backgroundImage: 'url(https://www.travelperk.com/wp-content/uploads/alexandre-pellaes-6vAjp0pscX0-unsplash-1-1.jpg)' }}>
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content flex-col lg:flex-row h-auto pb-16">
-                        <div className="lg:pr-96 ">
+
+
+
+                        <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
+
+                            className="lg:pr-96 ">
                             <p className="mb-6 font-semibold font-poppins text-blue-100">Biggest Tech Event</p>
 
                             <div className="flex gap-2 mb-4">
@@ -43,9 +59,9 @@ const MainHome = () => {
                 </div>
             </div>
 
-
-
         </div>
+
+
     );
 };
 

@@ -1,0 +1,77 @@
+{
+    "tech_news": [
+      {
+        "id": 1,
+        "image": "https://example.com/image1.jpg",
+        "title": "New Smartphone Launch",
+        "date": "2023-10-10",
+        "description": "A leading tech company has unveiled its latest smartphone, featuring cutting-edge technology.",
+        "paragraphs": [
+          "The new smartphone is equipped with a powerful processor and high-resolution display.",
+          "It also boasts advanced camera capabilities and 5G connectivity.",
+          "Tech enthusiasts are eagerly awaiting its release."
+        ]
+      },
+      {
+        "id": 2,
+        "image": "https://example.com/image2.jpg",
+        "title": "AI Breakthrough",
+        "date": "2023-10-15",
+        "description": "Researchers have achieved a significant breakthrough in artificial intelligence.",
+        "paragraphs": [
+          "The breakthrough involves a new deep learning algorithm that outperforms existing models.",
+          "It has the potential to revolutionize various industries, from healthcare to finance.",
+          "Experts are optimistic about the future of AI."
+        ]
+      },
+      {
+        "id": 3,
+        "image": "https://example.com/image3.jpg",
+        "title": "Tech Company's Record Profits",
+        "date": "2023-10-20",
+        "description": "A major tech company has reported record-breaking profits in its latest quarterly earnings report.",
+        "paragraphs": [
+          "The company attributes its success to strong sales of its flagship products.",
+          "Investors are pleased with the results, and the company's stock price has surged.",
+          "Analysts predict continued growth in the tech sector."
+        ]
+      },
+      {
+        "id": 4,
+        "image": "https://example.com/image4.jpg",
+        "title": "New VR Gaming Console",
+        "date": "2023-11-05",
+        "description": "Gaming enthusiasts can look forward to a new virtual reality (VR) gaming console hitting the market.",
+        "paragraphs": [
+          "The VR console promises an immersive gaming experience with state-of-the-art graphics and controls.",
+          "It is set to compete with other major players in the gaming industry.",
+          "Pre-orders for the device have already begun."
+        ]
+      },
+      {
+        "id": 5,
+        "image": "https://example.com/image5.jpg",
+        "title": "Space Exploration Breakthrough",
+        "date": "2023-11-15",
+        "description": "A space agency has made a significant breakthrough in propulsion technology for deep space exploration.",
+        "paragraphs": [
+          "The new propulsion system allows spacecraft to travel farther and faster into the cosmos.",
+          "This advancement could pave the way for future missions to distant planets and beyond.",
+          "Scientists and space enthusiasts are excited about the possibilities."
+        ]
+      },
+      {
+        "id": 6,
+        "image": "https://example.com/image6.jpg",
+        "title": "Next-Gen Gaming Console Revealed",
+        "date": "2023-12-01",
+        "description": "The next generation of gaming consoles has been revealed, promising a new era of gaming experiences.",
+        "paragraphs": [
+          "These consoles feature powerful hardware, ray tracing technology, and faster load times.",
+          "Gamers can expect stunning graphics and realistic gameplay in upcoming titles.",
+          "The competition between console manufacturers is heating up."
+        ]
+      }
+    ]
+  }
+  
