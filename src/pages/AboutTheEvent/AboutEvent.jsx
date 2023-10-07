@@ -31,7 +31,7 @@ const AboutEvent = () => {
                 <div data-aos="fade-left" className="">
                     <div className=" h-1 w-48 mb-5 mt-5  bg-sky-400"></div>
                     <p className="text-white mb-4">Global Technology Market Size [2030] | Market to Hit  New Heights <br /> of USD 3168.13 Million - [Growing at a CAGR of 25.73%]  </p>
-                    <Link>
+                    <Link to="/learnmore">
                         <button className="btn btn-outline text-white hover:bg-blue-200 hover:text-black">LEARN MORE</button>
                     </Link>
                 </div>

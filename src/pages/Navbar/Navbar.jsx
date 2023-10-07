@@ -22,10 +22,10 @@ const Navbar = () => {
                         </label>
                         <div tabIndex={0} className=" menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 
-                            <Link>Home</Link>
-                            <Link>services</Link>
-                            <Link>Speakers</Link>
-                            <Link>About US</Link>
+                            <Link to="/">Home</Link>
+                            <Link to="/speaker" >Speakers</Link>
+                            <Link to="/card">services</Link>
+                            <Link to="/eventdetails">Event Details</Link>
 
 
                         </div>
@@ -39,10 +39,10 @@ const Navbar = () => {
                 <div className="navbar-center  hidden lg:flex">
                     <div className="menu menu-horizontal text-white gap-5 pr-1">
 
-                        <Link className="hover:underline text-base">Home</Link>
-                        <Link className="hover:underline text-base">services</Link>
-                        <Link className="hover:underline text-base">Speakers</Link>
-                        <Link className="hover:underline text-base">About US</Link>
+                        <Link to="/" className="hover:underline text-base">Home</Link>
+                        <Link to="/speaker" className="hover:underline text-base">Speakers</Link>
+                        <Link to="/card" className="hover:underline text-base">services</Link>
+                        <Link to="/eventdetails" className="hover:underline text-base">Event Details</Link>
 
 
                     </div>
@@ -69,8 +69,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-{/* <div className="avatar">
-                        <div className="w-10  rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                        </div>
-                    </div> */}

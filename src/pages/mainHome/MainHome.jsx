@@ -1,6 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -46,7 +47,8 @@ const MainHome = () => {
                                         <p className="text-gray-300 text-xs lg:text-base">Garuda Wisnu Kencana Cultural Park, Jl.<br /> RayaUluwatu, Kuta,Badung, Bali Indonesia</p>
                                     </div>
                                     <div className="mt-12 mr-2">
-                                        <button className="btn btn-outline text-white hover:bg-blue-200 hover:text-black">GET TICKET</button>
+                                      <Link to="/tiket">
+                                      <button className="btn btn-outline text-white hover:bg-blue-200 hover:text-black">GET TICKET</button></Link>
                                     </div>
                                 </div>
 
