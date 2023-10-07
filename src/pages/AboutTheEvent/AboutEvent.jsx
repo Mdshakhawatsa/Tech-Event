@@ -39,24 +39,7 @@ const AboutEvent = () => {
             </div>
 
             <div>
-                vvv <br />
-                vvv <br />
-                vvv <br />
-                vvv <br />
-                vvv <br />
-                vvv <br />
-                vvv <br />
-                vvv <br />
-                vvv
-                vvv
-                vvv
-                vvv
-                vvv
-                vvv
-                vvv
-                vvv
-                vvv
-                vvv
+               
             </div>
 
 

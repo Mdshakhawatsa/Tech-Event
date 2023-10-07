@@ -1,40 +1,47 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { FcGoogle } from "react-icons/fc";
+import { FcGoogle } from 'react-icons/fc';
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 
-const Login = () => {
-    const { signIn } = useContext(AuthContext);
+const SignUp = () => {
+    const { creatUser } = useContext(AuthContext)
 
 
-    const handelLogin = e => {
+    const handelSignup = e => {
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
+        const name = form.get('name');
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password);
-        signIn(email, password)
-        .then(result =>{
-            console.log(result.user)
-        })
-        .catch(error => {
-            console.erroe(error);
-        })
+        console.log(name, email, password);
+
+        // creat user
+        creatUser(email, password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
+
+
 
 
     return (
         <div>
+
             <div>
                 <Navbar></Navbar>
             </div>
+
             <div className="max-w-7xl  mx-auto bg-white rounded-lg font-poppins border ">
                 <div>
-                    <h1 className="text-center pt-5 font-bold text-5xl font-poppins	">Log In</h1>
-                    <h1 className="text-center pt-5  text-1xl font-poppins">Don`t have an account? <Link to="/signup" className="text-blue-600 underline">Sign Up</Link></h1>
+                    <h1 className="text-center pt-5 font-bold text-5xl font-poppins	">Sign Up</h1>
+                    <h1 className="text-center pt-5  text-1xl font-poppins">Already have an account? <Link to="/login" className="text-blue-600 underline">Log In</Link></h1>
                 </div>
 
 
@@ -45,26 +52,30 @@ const Login = () => {
                             <div >
                                 <div className="card flex-shrink-0  w-96 shadow-md bg-base-100">
 
-                                    <form onSubmit={handelLogin} className="card-body">
+                                    <form onSubmit={handelSignup} className="card-body">
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span className="label-text">Name</span>
+                                            </label>
+                                            <input type="text" name="name" placeholder="Enter Your Name" className="input input-bordered" required />
+                                        </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text">Email</span>
                                             </label>
-                                            <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                            <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text">Password</span>
                                             </label>
-                                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                            <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
                                             <label className="label">
                                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                             </label>
                                         </div>
                                         <div className="form-control mt-6">
-
-                                            <button className="btn btn-outline btn-primary">Login</button>
-
+                                            <button className="btn btn-outline btn-primary">Sign Up</button>
                                         </div>
                                     </form>
 
@@ -96,9 +107,8 @@ const Login = () => {
 
             </div>
 
-
         </div>
     );
 };
 
-export default Login;
+export default SignUp;
