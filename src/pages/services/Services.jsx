@@ -23,6 +23,7 @@ const Services = () => {
             {/* <h2 className="card-title font-poppins">{jobs.length}</h2> */}
 
             <div  className="grid lg:grid-cols-3   justify-center items-center">
+
             {
                 jobs.map(job => <CardS key={job.id} job={job}></CardS>)
             }

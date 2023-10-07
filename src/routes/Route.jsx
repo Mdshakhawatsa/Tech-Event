@@ -9,6 +9,7 @@ import EventDetails from "../pages/eventDetails/EventDetails";
 import Ticket from "../pages/tickets/Ticket";
 import CardMain from "../pages/cardmain/CardMain";
 import Services from "../pages/services/Services";
+import CardDetails from "../pages/cardDetails/CardDetails";
 
 const routes = createBrowserRouter([
     {
@@ -48,9 +49,13 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/card',
-                element: <Services></Services>,
-                loader: () => fetch('/lranmore.json')
-
+                element: <Services></Services>
+                
+            },
+            {
+                path:'/details/:id',
+                element: <CardDetails></CardDetails>,
+                loader: () => fetch('../fakedata.json')
             }
 
         ]

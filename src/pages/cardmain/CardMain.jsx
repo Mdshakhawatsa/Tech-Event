@@ -2,6 +2,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -26,7 +27,9 @@ const CardMain = ({ data }) => {
                     <h2>{place}</h2>
                     <h2>{date}</h2>
                     {/* <p>{description}</p> */}
-                    <button className="btn btn-primary normal-case font-poppins ">Details</button>
+                   <Link to="/details/:id">
+                   <button className="btn glass bg-slate-400 w-40 normal-case font-poppins ">Details</button>
+                   </Link>
 
                 </div>
             </div>

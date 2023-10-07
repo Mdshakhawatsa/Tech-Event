@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 const CardS = ({ job }) => {
-    const { title , image, place, date} = job;
+    const { _id, title , image, place, date} = job;
 
 
     return (
@@ -16,7 +18,9 @@ const CardS = ({ job }) => {
                     <h2>{place}</h2>
                     <h2>{date}</h2>
                     {/* <p>{description}</p> */}
-                    <button className="btn btn-primary normal-case font-poppins ">Details</button>
+                  <Link to={`/details/${_id} `}>
+                  <button  className="btn glass bg-slate-400 w-40 normal-case font-poppins ">Details</button>
+                  </Link>
 
                 </div>
             </div>
