@@ -27,7 +27,7 @@ const CardMain = ({ data }) => {
                     <h2>{place}</h2>
                     <h2>{date}</h2>
                     {/* <p>{description}</p> */}
-                   <Link to="/details/:id">
+                   <Link to="/card">
                    <button className="btn glass bg-slate-400 w-40 normal-case font-poppins ">Details</button>
                    </Link>
 

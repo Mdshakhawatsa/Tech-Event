@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { FcGoogle } from 'react-icons/fc';
-import { useContext } from "react";
+
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 
 
 const SignUp = () => {
+    const [signupError, setsignupError] = useState('');
+    const [success, setsuccess] = useState('');
+    const [showPassword, setshowPassword] = useState(false);
+
     const { creatUser } = useContext(AuthContext)
 
 
@@ -18,13 +24,32 @@ const SignUp = () => {
         const password = form.get('password');
         console.log(name, email, password);
 
+        if (password.length < 6) {
+            setsignupError('Passwor should be 6 charachters or longer');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setsignupError('Password shouls have one uper case');
+            return;
+        }
+
+
+
+        // 
+        setsignupError('');
+        setsuccess('');
+
         // creat user
         creatUser(email, password)
             .then(result => {
-                console.log(result.user)
+                console.log(result.user);
+                setsuccess('User Created Successfully.');
+
             })
             .catch(error => {
-                console.error(error)
+                console.error(error);
+                setsignupError(error.message);
+
             })
     }
 
@@ -57,19 +82,46 @@ const SignUp = () => {
                                             <label className="label">
                                                 <span className="label-text">Name</span>
                                             </label>
+
                                             <input type="text" name="name" placeholder="Enter Your Name" className="input input-bordered" required />
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text">Email</span>
                                             </label>
-                                            <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                placeholder="Email"
+                                                className="input input-bordered"
+                                                required
+                                            />
                                         </div>
-                                        <div className="form-control">
-                                            <label className="label">
+                                        <div className="form-control ">
+                                            <label className="label  ">
                                                 <span className="label-text">Password</span>
                                             </label>
-                                            <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+
+                                            <div className="relative">
+
+                                                <input
+                                                    type={showPassword ? "text" : "password"}
+                                                    name="password"
+                                                    placeholder="Password"
+                                                    className="input input-bordered w-80"
+                                                    required />
+
+                                                <span className="absolute mt-4 right-2" onClick={() => setshowPassword(!showPassword)}>
+
+                                                    {
+                                                        showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+
+                                                    }
+
+                                                </span>
+
+                                            </div>
+
                                             <label className="label">
                                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                             </label>
@@ -78,6 +130,13 @@ const SignUp = () => {
                                             <button className="btn btn-outline btn-primary">Sign Up</button>
                                         </div>
                                     </form>
+
+                                    {
+                                        signupError && <p className="text-red-600 text-center text-lg mb-2">{signupError}</p>
+                                    }
+                                    {
+                                        success && <p className="text-green-800 font-bold text-center text-xl mb-4">{success}</p>
+                                    }
 
                                 </div>
                             </div>
@@ -91,10 +150,15 @@ const SignUp = () => {
                     {/*  */}
                     <div className="hero-content   lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <button className="btn btn-outline ">
+
+                            <h1 className="text-xl text-purple-700">Please Register or SignIn</h1>
+
+
+
+                            {/* <button className="btn btn-outline ">
                                 <FcGoogle className="text-3xl"></FcGoogle>
                                 Continue with Google
-                            </button>
+                            </button> */}
 
                         </div>
                     </div>

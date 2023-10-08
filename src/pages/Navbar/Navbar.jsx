@@ -1,15 +1,47 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
+
+
+
+
     const { user, logOut } = useContext(AuthContext);
+    const [loggedIn, setLoggedIn] = useState('')
+
+    useEffect(() => {
+
+        if (user) {
+            setLoggedIn(user);
+        } else {
+            setLoggedIn(null);
+        }
+    }, [user]);
+
+
 
     const handleSignOut = () => {
         logOut()
             .then()
             .catch()
     }
+
+
+
+
+    // const { users } = useContext(AuthContext);
+
+
+
+
+    // const { user, logOut } = useContext(AuthContext);
+
+    // const handleSignOut = () => {
+    //     logOut()
+    //         .then()
+    //         .catch()
+    // }
 
     return (
         <div className="max-w-7xl mx-auto font-poppins " >
@@ -49,7 +81,22 @@ const Navbar = () => {
                 </div>
 
 
+
+
                 <div className="navbar-end gap-2  mt-6 mb-4">
+
+                    {/*  */}
+
+                    {loggedIn && <div className=" mr-6 ">
+                        <img className="w-12 rounded-full " src={loggedIn.photoURL
+                        } />
+
+                    </div>
+
+                    }
+
+
+
 
                     {
                         user ?

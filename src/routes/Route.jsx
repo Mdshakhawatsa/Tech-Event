@@ -7,33 +7,35 @@ import LearnMore from "../pages/learnMore/LearnMore";
 import Speakers from "../pages/speakers/Speakers";
 import EventDetails from "../pages/eventDetails/EventDetails";
 import Ticket from "../pages/tickets/Ticket";
-import CardMain from "../pages/cardmain/CardMain";
+// import CardMain from "../pages/cardmain/CardMain";
 import Services from "../pages/services/Services";
 import CardDetails from "../pages/cardDetails/CardDetails";
+import PrivateRoute from "../pages/privateRoutes/privateRoute";
+import Error from "../pages/Error/Error";
 
 const routes = createBrowserRouter([
     {
-        path :'/',
+        path: '/',
         element: <Root></Root>,
         children: [
             {
-                path:'/',
+                path: '/',
                 element: <Home></Home>,
                 loader: () => fetch('/fakedata.json')
-                
+
             },
             {
-                path:'/login',
-                element:<Login></Login>
+                path: '/login',
+                element: <Login></Login>
             },
             {
-                path:'/signup',
-                element:<SignUp></SignUp>
+                path: '/signup',
+                element: <SignUp></SignUp>
             },
             {
-                path:'/learnmore',
-                element:<LearnMore></LearnMore>,
-            
+                path: '/learnmore',
+                element: <PrivateRoute><LearnMore></LearnMore></PrivateRoute>,
+
             },
             {
                 path: '/speaker',
@@ -48,18 +50,27 @@ const routes = createBrowserRouter([
                 element: <Ticket></Ticket>
             },
             {
-                path:'/card',
+                path: '/card',
                 element: <Services></Services>
-                
+
             },
             {
-                path:'/details/:id',
-                element: <CardDetails></CardDetails>,
+                path: '/details/:id',
+                element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
                 loader: () => fetch('../fakedata.json')
+            },
+            {
+                path: '/erroor',
+                element: <Error></Error>
             }
+
+
+            // {
+            //     path:'/details/:id',
+            //     element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>
+            // }
 
         ]
     }
 ]);
 export default routes;
-  

@@ -3,9 +3,37 @@ import Navbar from "../Navbar/Navbar";
 import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
+
 
 
 const Login = () => {
+// 
+const auth = getAuth (app);
+const provider = new GoogleAuthProvider();
+const handleGoogleSignIn = () =>{
+  signInWithPopup(auth, provider)
+  .then(result =>{
+    const user = result.user;
+    console.log(user);
+  })
+  .catch(error =>{
+    console.log('error', error.message)
+  })
+}
+
+
+
+
+// 
+
+
+
+
+
+
+
     const { signIn } = useContext(AuthContext);
 
 
@@ -75,12 +103,12 @@ const Login = () => {
 
                     {/*  */}
 
-                    <div className="h-40 w-1 bg-gray-700 mt-60   "> </div>
+                    <div className="h-40 w-1 bg-gray-700 mt-60 hidden lg:block   "> </div>
 
                     {/*  */}
-                    <div className="hero-content   lg:flex-row-reverse">
+                    <div className="hero-content  lg:p-1   lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <button className="btn btn-outline ">
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline ">
                                 <FcGoogle className="text-3xl"></FcGoogle>
                                 Continue with Google
                             </button>

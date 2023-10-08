@@ -41,7 +41,8 @@
   {
     "_id": 4,
     "image": "https://i.ibb.co/Cb33H8r/Work-event-1-1440x960.jpg",
-    "title": "Tech Summit & Awards",
+    "image_": "https://i.ibb.co/XpScYh8/download.png",
+    "title": "Tech Submit & Awards",
     "date": "8th-9th March 2024",
     "place": "Singapore",
     "description": "The Global Tech Innovation Summit is an annual event that brings together industry leaders, entrepreneurs, investors, and other stakeholders to explore the latest trends and developments in technology. This event is a must-attend for the community interested in the latest developments in areas like crypto, blockchain, metaverse, digital assets, web 3, cyber security, AI and emerging tech. The Global Tech Innovation Summit is more than just another industry event – it’s a gathering of some of the world’s most innovative thinkers, visionaries, and entrepreneurs, all united in their commitment to shaping the future of technology.. ",
@@ -57,7 +58,7 @@
     "title": "Space Exploration ",
     "date": "SEPTEMBER 25-28, 2023",
     "place": "Madrid , Spain",
-    "description": "A space agency has made a significant breakthrough in propulsion technology for deep space exploration.",
+    "description": "A space agency has made a significant breakthrough in propulsion technology for deep space exploration.This is a timeline of space exploration which includes notable achievements, first accomplishments and milestones in humanity's exploration of outer space.This timeline generally does not distinguish achievements by a specific country or private company, as it considers humanity as a whole. See otherwise the timeline of private spaceflight or look for achievements by each space agency.",
     "paragraphs": [
       "The new propulsion system allows spacecraft to travel farther and faster into the cosmos.",
       "This advancement could pave the way for future missions to distant planets and beyond.",
@@ -66,11 +67,11 @@
   },
   {
     "_id": 6,
-    "image": "https://i.ibb.co/d6bm07y/AI-Artificial-Intelligence-Generic-Hero-Be-F.jpg",
+    "image": "https://i.ibb.co/8N76y3r/xbox-switch-ps5.webp",
     "title": "Next-Gen Gaming Console",
     "date": "8th-9th May 2024",
     "place": "Boston, Massachussetts",
-    "description": "The next generation of gaming consoles has been revealed, promising a new era of gaming experiences.",
+    "description": "The next generation of gaming consoles has been revealed, promising a new era of gaming experiences.The PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. It was announced as the successor to the PlayStation 4 in April 2019, was launched on November 12, 2020, in Australia, Japan, New Zealand, North America, and South Korea, and was released worldwide one week later. ",
     "paragraphs": [
       "These consoles feature powerful hardware, ray tracing technology, and faster load times.",
       "Gamers can expect stunning graphics and realistic gameplay in upcoming titles.",

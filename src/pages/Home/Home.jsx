@@ -11,7 +11,7 @@ const Home = () => {
     const data = useLoaderData();
     console.log(data)
     return (
-        <div className="bg-sky-950">
+        <div className="bg-sky-950 overflow-x-hidden">
             <Navbar></Navbar>
             <MainHome></MainHome>
             <AboutEvent></AboutEvent>
@@ -25,14 +25,6 @@ const Home = () => {
                     ></CardMain>)
                 }
             </div>
-
-
-
-
-            {/* <CardMain></CardMain> */}
-
-
-
 
 
             <Footer></Footer>
