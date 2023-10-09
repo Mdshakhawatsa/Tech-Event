@@ -24,6 +24,7 @@ const SignUp = () => {
         const password = form.get('password');
         console.log(name, email, password);
 
+
         if (password.length < 6) {
             setsignupError('Passwor should be 6 charachters or longer');
             return;
@@ -32,6 +33,10 @@ const SignUp = () => {
             setsignupError('Password shouls have one uper case');
             return;
         }
+        else if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(password)) {
+            setsignupError('Password should have at least one special character');
+            return;
+          }
 
 
 
@@ -145,13 +150,13 @@ const SignUp = () => {
 
                     {/*  */}
 
-                    <div className="h-40 w-1 bg-gray-700 mt-60   "> </div>
+                    <div className="h-40 w-1 bg-gray-700 mt-60 hidden lg:block   "> </div>
 
                     {/*  */}
-                    <div className="hero-content   lg:flex-row-reverse">
+                    <div className="hero-content   lg:flex-row-reverse ">
                         <div className="text-center lg:text-left">
 
-                            <h1 className="text-xl text-purple-700">Please Register or SignIn</h1>
+                            <h1 className="text-xl text-purple-700">Please Register or SignUp</h1>
 
 
 

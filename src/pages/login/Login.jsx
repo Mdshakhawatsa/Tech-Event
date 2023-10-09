@@ -1,35 +1,39 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { FcGoogle } from "react-icons/fc";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 
 const Login = () => {
-// 
-const auth = getAuth (app);
-const provider = new GoogleAuthProvider();
-const handleGoogleSignIn = () =>{
-  signInWithPopup(auth, provider)
-  .then(result =>{
-    const user = result.user;
-    console.log(user);
-  })
-  .catch(error =>{
-    console.log('error', error.message)
-  })
-}
+    // 
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log('error', error.message)
+            })
+    }
 
 
 
 
-// 
+    // 
+    const [loginError, setloginError] = useState('');
+    const [succes, setSuccess] = useState('');
+    const [showPasswords, setshowPasswords] = useState(false);
+    // 
 
-
-
+    // 
 
 
 
@@ -44,13 +48,39 @@ const handleGoogleSignIn = () =>{
         const email = form.get('email');
         const password = form.get('password');
         console.log(email, password);
+
+        // 
+        if (password.length < 6) {
+            setloginError('Passwor should be 6 charachters or longer');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setloginError('Password shouls have one uper case');
+            return;
+        }
+        else if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(password)) {
+            setloginError('Password should have at least one special character');
+            return;
+        }
+
+
+        setloginError('');
+        setSuccess('');
+
+        // 
+
+
+
+
+
+
         signIn(email, password)
-        .then(result =>{
-            console.log(result.user)
-        })
-        .catch(error => {
-            console.erroe(error);
-        })
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.erroe(error);
+            })
     }
 
 
@@ -84,7 +114,33 @@ const handleGoogleSignIn = () =>{
                                             <label className="label">
                                                 <span className="label-text">Password</span>
                                             </label>
-                                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+
+
+                                            <div className="relative">
+                                                <input
+                                                    type={showPasswords ? "text" : "password"}
+                                                    name="password"
+                                                    placeholder="password"
+                                                    className="input input-bordered w-80"
+                                                    required />
+
+                                                <span className="absolute top-4 right-2" onClick={() => setshowPasswords(!showPasswords)}>
+
+                                                    {
+                                                        showPasswords ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+
+                                                    }
+
+                                                </span>
+
+
+
+                                            </div>
+
+
+
+
+
                                             <label className="label">
                                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                             </label>
@@ -95,6 +151,12 @@ const handleGoogleSignIn = () =>{
 
                                         </div>
                                     </form>
+                                    {
+                                        loginError && <p className="text-red-600 text-center text-lg mb-2">{loginError}</p>
+                                    }
+                                    {
+                                        succes && <p className="text-green-800 font-bold text-center text-xl mb-4">{succes}</p>
+                                    }
 
                                 </div>
                             </div>
