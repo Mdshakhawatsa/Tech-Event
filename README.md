@@ -1,8 +1,16 @@
-# React + Vite
+# React + Vite + Tailwind css + Daisy Ui
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ website name : https://github.com/programming-hero-web-course-4/b8a9-event-management-Mdshakhawatsa
+ link : https://tech-5cac2.web.app/
 
-Currently, two official plugins are available:
+- User Registration and Authentication
+- Responsive Design
+- Private routs
+- 404 error page
+- User Google log in
+- Speakers
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+
