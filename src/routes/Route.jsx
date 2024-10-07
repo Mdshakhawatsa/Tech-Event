@@ -10,8 +10,9 @@ import Ticket from "../pages/tickets/Ticket";
 // import CardMain from "../pages/cardmain/CardMain";
 import Services from "../pages/services/Services";
 import CardDetails from "../pages/cardDetails/CardDetails";
-import PrivateRoute from "../pages/privateRoutes/privateRoute";
+// import PrivateRoute from "../pages/privateRoutes/privateRoute";
 import Error from "../pages/Error/Error";
+import PrivateRoute from "../pages/privateRoutes/PrivateRoute";
 
 const routes = createBrowserRouter([
     {
